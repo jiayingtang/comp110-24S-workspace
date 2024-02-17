@@ -7,6 +7,7 @@ g_size = 4
 s_row = 3
 s_column = 2
 
+
 def get_guess(prompt: str) -> int:
     """Prompt the user for a guess and ensure it's within the grid bounds."""
     while True:
@@ -14,6 +15,7 @@ def get_guess(prompt: str) -> int:
         if 1 <= guess <= g_size:
             return guess
         print(f"The grid is only {g_size} by {g_size}. Try again: ", end="")
+
 
 def print_grid(row_guess: int, column_guess: int) -> None:
     """Prints the game grid, marking the guess location with appropriate box color."""
@@ -27,6 +29,7 @@ def print_grid(row_guess: int, column_guess: int) -> None:
                 print(BLUE_BOX, end="")
         print()  # Newline after each row
 
+
 # Constants for box types
 BLUE_BOX = "\U0001F7E6"
 RED_BOX = "\U0001F7E5"
@@ -36,8 +39,10 @@ WHITE_BOX = "\U00002B1C"
 r_guess = get_guess("Guess a row: ")
 c_guess = get_guess("Guess a column: ")
 
+
 # Print the grid with the guess result
 print_grid(r_guess, c_guess)
+
 
 # Print feedback with hints
 if r_guess == s_row and c_guess == s_column:
